@@ -70,6 +70,9 @@ de.philipphertweck.shoppingbasket
     exceptions/
         UnknownArticleException
 ```
+
+## Class diagram
+![Class diagram](assets/class-diagram.png)
  
 ## Design decisions
  
