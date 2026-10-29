@@ -20,7 +20,7 @@ class InventoryTest {
 
     @Test
     void findsAddedArticle() {
-        Article article = new Article("123", 100);
+        Article article = new Article("123", 1299);
         inventory.addArticle(article);
 
         assertEquals(Optional.of(article), inventory.findArticle("123"));
@@ -33,12 +33,12 @@ class InventoryTest {
 
     @Test
     void rejectsDuplicateArticleNumber() {
-        Article original = new Article("123", 100);
+        Article original = new Article("123", 399);
         inventory.addArticle(original);
 
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> inventory.addArticle(new Article("123", 200)));
+                () -> inventory.addArticle(new Article("123", 39900)));
 
         assertEquals("Article with number 123 already exists", exception.getMessage());
 
